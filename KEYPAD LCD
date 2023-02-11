@@ -1,0 +1,69 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(8, 9, 4, 5, 6, 7); 
+
+const String password = "btnUp, btnDOWN, btnLEFT, btnRIGHT";
+String input_password; 
+
+int lcd_key     = 0;
+int adc_key_in  = 0;
+#define btnRIGHT  0
+#define btnUP     1
+#define btnDOWN   2
+#define btnLEFT   3
+#define btnSELECT 4
+#define btnNONE   5
+
+void setup()
+{
+ lcd.clear();
+ lcd.begin(16, 2);              
+ lcd.setCursor(0,0);
+ lcd.print("Enter Password:");
+} 
+
+void loop()
+{
+ lcd.setCursor(9,1);
+  delay(100);
+ lcd.setCursor(0,1);
+ 
+ lcd_key = read_LCD_buttons();
+ 
+ switch (lcd_key)
+ {
+   case btnRIGHT:
+     {
+     lcd.print("14---   ");
+     break;
+     }
+   case btnLEFT:
+     {
+     lcd.print("1463-   ");
+     break;
+     }
+   case btnUP:
+     {
+     lcd.print("1----   ");
+     break;
+     }
+   case btnDOWN:
+     {
+     lcd.print("146--  ");
+     break;
+     }
+   case btnSELECT:
+     {
+     lcd.print("14639 -- ENTER");
+     break;
+     }
+     case btnNONE:
+     {
+     lcd.print("-----");
+     break;
+     }
+    
+    }
+    if string _password = 
+ }
+
+
